@@ -1,0 +1,57 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}My Music{% endblock %}
+
+{% block content%}
+
+<style type="text/css">
+    @media only screen and (max-width: 575px) and (min-width:  290px) {
+    .video {
+        margin-left: 0.3em;
+
+    }
+
+/*    @media only screen and (max-width: 575px) and (min-width:  305px) {
+    .video {
+        margin-left: 0.7em;
+
+    }*/
+
+    @media only screen and (max-width: 575px) and (min-width:  325px) {
+    .video {
+        margin-left: 1em;
+
+    }
+    @media only screen and (max-width: 575px) and (min-width:  370px) {
+    .video {
+        margin-left: 1.8em;
+
+    }
+
+    @media only screen and (max-width: 575px) and (min-width:  400px) {
+    .video {
+        margin-left: 3em;
+
+    }
+
+    @media only screen and (max-width: 575px) and (min-width:  475px) {
+        .video {
+            margin-left: 8em;
+
+        }
+    }
+
+
+</style>
+
+<h1 class="flydown text-center">Eliyahu's Music</h1>
+
+<div class="video row" style="padding-left:1em;">
+    {% for video in videos %}
+        <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <iframe width="275px" height="auto" src="https://www.youtube.com/embed/{{ video }}" title="YouTube  player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

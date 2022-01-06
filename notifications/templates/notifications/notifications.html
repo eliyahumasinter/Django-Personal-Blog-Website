@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Notifications Page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content%}
+<div class="container">
+    <h3>Sign up to receive notifications!</h3>
+    <div class="row">
+        <div class="col-sm-8">
+           <div class="form">
+               <form  method="POST">
+                   {% csrf_token %}
+                    <fieldset class="form-group">
+                       {{ form|crispy }}
+                       <button class="btn btn-light" type="submit">Sign Up!</button>
+                    </fieldset>
+               </form>
+           </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
